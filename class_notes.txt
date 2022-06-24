@@ -1,0 +1,128 @@
+Topic: CSS
+
+Learning Objectives:
+understanding ways of selecting elements
+how specifity affects styling
+what is the box modedl
+
+Selectors, specifity, box modedl, css reset, first kahoot!
+
+CSS is something we have to use to be good at, usually need
+to refresh when using it. 
+
+CSS: Cascading Style Sheets
+    we can have seperate sheets/files to apply style
+    to the page. 
+
+    Will overide stile if it comes last and precedence
+    is equal.
+
+    We want to leave structure to html and design in 
+    CSS, alothough styling is possible with html.
+Design
+
+Cascading Style Sheets
+    cascading allows several style sheets to influence
+    presentation of doc
+
+    css defines a priority scheme that resolves conflicts
+
+    allows us to seperate content from presentation
+
+structure of CSS:
+    selectors {         
+        property: value;
+    }
+
+Selectors:
+    Patterns used to select the elements you want to style
+
+    Basic Selectors: (Taylor's Favorites)
+        Type: p ---> every p tag will be selected
+        Class: .some-class-name ----> all p tags of class of "some-class-name" will be selected
+        ID: #some-id ---> " " and "some-id"
+
+        Gets more specific as we go down the list
+
+    Common Selectors:
+        Descendant: a b 
+        selects all b in a ---> every b inside a {Select all b}
+
+
+        div p{                  ------> All p's in div will be styled
+            background-color: blue;
+        }
+
+        Child: a > b
+        selects all b that are a direct child of a
+
+        div > p{                  ------> child p's in div will be styled
+            background-color: red; ---> key heere is that they must be direct descendants (not nested)
+        }
+
+        other common selectors
+        comma-seperated: a, h1, p
+        adjacent sibling: a + b : style only to b on same level of a
+        general sibling: a ~ b: same level, style to b, a preced b at somepoint
+        First Child: p:first-child: 
+        Last Child: p:last-child
+        Nth-Child: p:nth-child(2)
+        :hover, :active, :focus --> based on User interaction
+        example: p:hover (user hovers over my p tag element do some style)
+        Attributes: input[type="text"]
+
+        Demo:
+            p.highlight vs p .highlight
+            h1#title vs h1 #title
+            these are different selectors
+
+            selector references
+            list of selectors: https://www.w3schools.com/cssref/css_selectors.asp
+            Diner Game (Selector Practice): https://flukeout.github.io/
+
+
+        Specificity:
+            Determined by how specific a selection is
+            CSS Specificity scoring
+            Determines which rules apply
+            General practice: avoid writing overly-specific rules
+
+            Least-----------------
+                Universal
+                *Elements/Psuedo-elements
+                *classes/attributes/pseudo-classes
+                *id's
+                inline
+                important --> Bad Practice (used for testing)
+            Most-------------------
+            * We wanna live in these selectors for the most practice
+
+            Universal: * score: (0,0,0,0) Easily overridden
+            Elements/Psuedo: h1, div, :after (0001)
+            classes/attributes/pseudo-classes .cats, (0010)
+            IDs: #cool-cat (0100) --->Usually most specific
+            inline: direct html styling (1000)
+            !imporant --> highly specific (shouldnt really use)
+                h1{
+                    color: red !important;
+                }
+
+        Actual Demo:
+            needs to be linked into head tag of html
+            <link rel="stylesheet" href = ./css_>
+
+            .descendant-selector p
+
+
+        Box Model -- create right spacing/look
+            Margin
+              Border
+                Padding
+                 Text or other content
+
+        More Demo
+        CSS Reset
+        good practice
+        google is the ultimate css Help Desk
+        MDN CSS
+        w3c Css specs
